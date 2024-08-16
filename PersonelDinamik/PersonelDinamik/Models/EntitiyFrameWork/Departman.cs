@@ -7,22 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace PersonelDinamik.Models.EntitiyFrameWork
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Departman
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Departman()
         {
             this.Personel = new HashSet<Personel>();
         }
-    
-        public int ID { get; set; }
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }  // Otomatik artan ID alaný
+
         public string AD { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Personel> Personel { get; set; }
     }
