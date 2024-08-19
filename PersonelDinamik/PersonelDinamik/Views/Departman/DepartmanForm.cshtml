@@ -1,0 +1,16 @@
+﻿@model PersonelDinamik.Models.EntitiyFrameWork.Departman
+
+@{
+    ViewBag.Title = "yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="AD">Departman Adı</label>
+        @Html.TextBoxFor(m => m.AD, new { @class = "form-control", placeholder = "Departman Adı" })
+    </div>
+    @Html.HiddenFor(m=>m.ID)
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}

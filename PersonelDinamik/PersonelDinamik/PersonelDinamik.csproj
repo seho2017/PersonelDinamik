@@ -102,16 +102,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\EntitiyFrameWork\PersonelModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PersonelModel.Context.cs</LastGenOutput>
-      <DependentUpon>PersonelModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\EntitiyFrameWork\PersonelModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PersonelModel.edmx</DependentUpon>
-      <LastGenOutput>PersonelModel.cs</LastGenOutput>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -120,13 +110,30 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\EntitiyFrameWork\ModelPersonel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPersonel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EntitiyFrameWork\ModelPersonel.edmx.diagram">
+      <DependentUpon>ModelPersonel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Models\EntitiyFrameWork\ModelPersonel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPersonel.edmx</DependentUpon>
+      <LastGenOutput>ModelPersonel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EntitiyFrameWork\ModelPersonel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPersonel.edmx</DependentUpon>
+      <LastGenOutput>ModelPersonel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Departman\yeni.cshtml" />
+    <Content Include="Views\Departman\DepartmanForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -135,37 +142,30 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EntitiyFrameWork\Departman.cs">
-      <DependentUpon>PersonelModel.tt</DependentUpon>
+      <DependentUpon>ModelPersonel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntitiyFrameWork\ModelPersonel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPersonel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntitiyFrameWork\ModelPersonel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPersonel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntitiyFrameWork\ModelPersonel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPersonel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\EntitiyFrameWork\Personel.cs">
-      <DependentUpon>PersonelModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntitiyFrameWork\PersonelModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonelModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntitiyFrameWork\PersonelModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonelModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntitiyFrameWork\PersonelModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonelModel.edmx</DependentUpon>
+      <DependentUpon>ModelPersonel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\EntitiyFrameWork\PersonelModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PersonelModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EntitiyFrameWork\PersonelModel.edmx.diagram">
-      <DependentUpon>PersonelModel.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Departman\Index.cshtml" />

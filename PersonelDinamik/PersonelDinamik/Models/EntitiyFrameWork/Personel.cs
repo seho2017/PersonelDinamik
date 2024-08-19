@@ -18,11 +18,11 @@ namespace PersonelDinamik.Models.EntitiyFrameWork
         public int DEPARTMANID { get; set; }
         public string AD { get; set; }
         public string SOYAD { get; set; }
-        public byte YAS { get; set; }
-        public short MAAS { get; set; }
-        public System.DateTime DOGUMTARIHI { get; set; }
-        public bool CINSIYET { get; set; }
-        public bool EVLIMI { get; set; }
+        public Nullable<byte> YAS { get; set; }
+        public Nullable<short> MAAS { get; set; }
+        public Nullable<System.DateTime> DOGUMTARIHI { get; set; }
+        public Nullable<bool> CINSIYET { get; set; }
+        public Nullable<bool> EVLIMI { get; set; }
     
         public virtual Departman Departman { get; set; }
     }
