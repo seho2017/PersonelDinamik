@@ -19,10 +19,10 @@
         @foreach (var departman in Model)
         {
             <tr>
-                <td>@departman.ID</td>
-                <td>@departman.AD</td>
-                <td><a class=" btn btn-primary" href="/Departman/Guncelle/@departman.ID">Güncelle</a></td>
-                <td><a class=" btn btn-warning" href="/Departman/Sil/@departman.ID">Sil</a></td>
+                <td>@departman.Id</td>
+                <td>@departman.DepartmanAd</td>
+                <td><a class=" btn btn-primary" href="/Departman/Guncelle/@departman.Id">Güncelle</a></td>
+                <td><a class=" btn btn-warning" href="/Departman/Sil/@departman.Id">Sil</a></td>
             </tr>
         }
 

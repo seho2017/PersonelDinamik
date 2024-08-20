@@ -13,10 +13,10 @@ namespace PersonelDinamik.Models.EntitiyFrameWork
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PersonelDBEntities2 : DbContext
+    public partial class PersonelDbEntities : DbContext
     {
-        public PersonelDBEntities2()
-            : base("name=PersonelDBEntities2")
+        public PersonelDbEntities()
+            : base("name=PersonelDbEntities")
         {
         }
     

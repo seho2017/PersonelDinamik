@@ -14,15 +14,14 @@ namespace PersonelDinamik.Models.EntitiyFrameWork
     
     public partial class Personel
     {
-        public int ID { get; set; }
-        public int DEPARTMANID { get; set; }
-        public string AD { get; set; }
-        public string SOYAD { get; set; }
-        public Nullable<byte> YAS { get; set; }
-        public Nullable<short> MAAS { get; set; }
-        public Nullable<System.DateTime> DOGUMTARIHI { get; set; }
-        public Nullable<bool> CINSIYET { get; set; }
-        public Nullable<bool> EVLIMI { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> DepartmanId { get; set; }
+        public string Ad { get; set; }
+        public string Soyad { get; set; }
+        public Nullable<short> Maas { get; set; }
+        public Nullable<System.DateTime> DogumTarihi { get; set; }
+        public bool Cinsiyet { get; set; }
+        public bool EvliMi { get; set; }
     
         public virtual Departman Departman { get; set; }
     }

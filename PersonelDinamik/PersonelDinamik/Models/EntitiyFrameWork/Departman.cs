@@ -20,8 +20,8 @@ namespace PersonelDinamik.Models.EntitiyFrameWork
             this.Personel = new HashSet<Personel>();
         }
     
-        public int ID { get; set; }
-        public string AD { get; set; }
+        public int Id { get; set; }
+        public string DepartmanAd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Personel> Personel { get; set; }

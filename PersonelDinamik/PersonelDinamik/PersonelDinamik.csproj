@@ -110,23 +110,23 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\EntitiyFrameWork\ModelPersonel.edmx">
+    <EntityDeploy Include="Models\EntitiyFrameWork\Personel_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelPersonel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Personel_Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EntitiyFrameWork\ModelPersonel.edmx.diagram">
-      <DependentUpon>ModelPersonel.edmx</DependentUpon>
+    <Content Include="Models\EntitiyFrameWork\Personel_Model.edmx.diagram">
+      <DependentUpon>Personel_Model.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Models\EntitiyFrameWork\ModelPersonel.Context.tt">
+    <Content Include="Models\EntitiyFrameWork\Personel_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelPersonel.edmx</DependentUpon>
-      <LastGenOutput>ModelPersonel.Context.cs</LastGenOutput>
+      <DependentUpon>Personel_Model.edmx</DependentUpon>
+      <LastGenOutput>Personel_Model.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\EntitiyFrameWork\ModelPersonel.tt">
+    <Content Include="Models\EntitiyFrameWork\Personel_Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelPersonel.edmx</DependentUpon>
-      <LastGenOutput>ModelPersonel.cs</LastGenOutput>
+      <DependentUpon>Personel_Model.edmx</DependentUpon>
+      <LastGenOutput>Personel_Model.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -138,31 +138,33 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
+    <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EntitiyFrameWork\Departman.cs">
-      <DependentUpon>ModelPersonel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntitiyFrameWork\ModelPersonel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPersonel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntitiyFrameWork\ModelPersonel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPersonel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntitiyFrameWork\ModelPersonel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPersonel.edmx</DependentUpon>
+      <DependentUpon>Personel_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntitiyFrameWork\Personel.cs">
-      <DependentUpon>ModelPersonel.tt</DependentUpon>
+      <DependentUpon>Personel_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntitiyFrameWork\Personel_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Personel_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntitiyFrameWork\Personel_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Personel_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntitiyFrameWork\Personel_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Personel_Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PersonelFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -171,6 +173,8 @@
     <Content Include="Views\Departman\Index.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Personel\Index.cshtml" />
+    <Content Include="Views\Personel\PersonelForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

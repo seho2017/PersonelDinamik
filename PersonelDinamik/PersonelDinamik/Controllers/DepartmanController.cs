@@ -9,7 +9,7 @@ namespace PersonelDinamik.Controllers
 {
     public class DepartmanController : Controller
     {
-        PersonelDBEntities2 db=new PersonelDBEntities2(); 
+        PersonelDbEntities db=new PersonelDbEntities();
         // GET: Departman
         public ActionResult Index()
         {
@@ -25,18 +25,18 @@ namespace PersonelDinamik.Controllers
       [HttpPost]
         public ActionResult Kaydet(Departman departman)
         {
-            if (departman.ID == 0)
+            if (departman.Id == 0)
             {
                 db.Departman.Add(departman);
             }
             else
             {
-                var guncellenecekDepartman = db.Departman.Find(departman.ID);
+                var guncellenecekDepartman = db.Departman.Find(departman.Id);
                 if (guncellenecekDepartman == null)
                 {
                     return HttpNotFound();
                 }
-                guncellenecekDepartman.AD = departman.AD;
+                guncellenecekDepartman.DepartmanAd = departman.DepartmanAd;
             }
            db.SaveChanges();
            return RedirectToAction("Index","Departman");
