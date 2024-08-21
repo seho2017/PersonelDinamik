@@ -13,11 +13,12 @@
             <th>AD</th>
             <th>SOYAD</th>
             <th>DEPARTMAN</th>
-            <th>YAŞ</th>
             <th>MAAŞ</th>
             <th>DOĞUM TARİHİ</th>
             <th>CİNSİYET</th>
             <th>EVLİLİK DURUMU</th>
+            <th>GÜNCELLE</th>
+            <th>SİL</th>
         </tr>
     </thead>
     <tbody>
@@ -26,12 +27,14 @@
             <tr>
                 <td>@personel.Ad</td>
                 <td>@personel.Soyad</td>
-                <td>@personel.Departman.DepartmanAd</td>
-                <td>@(DateTime.Now.Year - personel.DogumTarihi.Value.Year)</td>
+                <td>@(personel.Departman!=null?personel.Departman.DepartmanAd:"Departman bilgisi yok")</td>
                 <td>@personel.Maas</td>
-                <td>@personel.DogumTarihi.Value.ToString("dd-mm-yyyy")</td>
+                <td>@personel.DogumTarihi.Value.ToString("dd-MM-yyyy")</td>
                 <td>@(personel.Cinsiyet==true?"Erkek":"Kadın")</td>
                 <td>@(personel.EvliMi==true?"Evli":"Bekar")</td>
+                <td>@Html.ActionLink("Güncelle", "Guncelle", new { Id = personel.Id }, new { @class = "btn btn-success" })</td>
+                <td>@Html.ActionLink("Sil", "Sil", new { Id = personel.Id }, new { @class = "btn btn-danger" })</td>
+
             </tr>
         }
 

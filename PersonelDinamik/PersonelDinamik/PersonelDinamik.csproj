@@ -102,6 +102,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\EntitiyFrameWork\Personel_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Personel_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EntitiyFrameWork\Personel_Model.edmx.diagram">
+      <DependentUpon>Personel_Model.edmx</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -110,13 +117,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\EntitiyFrameWork\Personel_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Personel_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EntitiyFrameWork\Personel_Model.edmx.diagram">
-      <DependentUpon>Personel_Model.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Models\EntitiyFrameWork\Personel_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

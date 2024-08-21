@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using PersonelDinamik.ViewModels;
 
 namespace PersonelDinamik.Controllers
 {
@@ -19,7 +20,45 @@ namespace PersonelDinamik.Controllers
         }
         public ActionResult yeni() 
         {
-            return View("PersonelForm");
+            var model = new PersonelFormViewModel()
+            {
+                Departmanlar = db.Departman.ToList()
+            };
+            return View("PersonelForm",model);
+        }
+        public ActionResult Kaydet(Personel personel)
+        {
+            if(personel.Id==0)//ekleme işlemi
+            {
+                db.Personel.Add(personel);
+            }
+            else//güncelleme
+            {
+                db.Entry(personel).State = System.Data.Entity.EntityState.Modified;
+
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Guncelle(int id)
+        {
+            var model = new PersonelFormViewModel()
+            {
+                Departmanlar = db.Departman.ToList(),
+                personel = db.Personel.Find(id)
+            };
+            return View("PersonelForm", model);
+        }
+        public ActionResult Sil(int id)
+        {
+            var silinecekPersonel = db.Personel.Find(id);
+            if (silinecekPersonel == null)
+            {
+                return HttpNotFound();
+            }
+            db.Personel.Remove(silinecekPersonel);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
