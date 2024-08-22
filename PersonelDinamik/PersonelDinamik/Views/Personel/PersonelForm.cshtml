@@ -5,43 +5,54 @@
 }
 
 <h2>Personel Formu</h2>
-@using (Html.BeginForm("Kaydet", "Personel", FormMethod.Post)) 
+@Html.ValidationSummary()
+@using (Html.BeginForm("Kaydet", "Personel", FormMethod.Post))
 {
-<div class="form-group">
-    @Html.LabelFor(m=>m.personel.Ad)
-    @Html.TextBoxFor(m => m.personel.Ad, new {@class="form-control"})
-</div>
-<div class="form-group">
-    @Html.LabelFor(m => m.personel.Soyad)
-    @Html.TextBoxFor(m => m.personel.Soyad, new { @class = "form-control" })
-</div>
-<div class="form-group">
-@Html.LabelFor(m=>m.personel.DepartmanId)
-    @Html.DropDownListFor(m=>m.personel.DepartmanId,new SelectList(Model.Departmanlar,"Id","DepartmanAd"),"Departman Seçiniz", new 
-{ @class = "form-control" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(m => m.personel.Maas)
-    @Html.TextBoxFor(m => m.personel.Maas, new { @class = "form-control" })
-</div>
-<div class="form-group">
-    @Html.LabelFor(m => m.personel.DogumTarihi)
-    @Html.TextBoxFor(m => m.personel.DogumTarihi,"{0:yyyy-MM-dd}", new { @class = "form-control",type="date"})
-</div>
-<div class="radio">
-    <label>
-        @Html.RadioButtonFor(m => m.personel.Cinsiyet, true) Erkek
-    </label>
-    <label>
-        @Html.RadioButtonFor(m => m.personel.Cinsiyet, false) Kadın
-    </label>
-</div>
-<div class="checkbox">
-    <label>
-        @Html.CheckBoxFor(m=>m.personel.EvliMi) Evliyseniz seçiniz
-    </label>
-</div>
-@Html.HiddenFor(m=>m.personel.Id)
-<button type="submit" class="btn btn-default">Kaydet</button>
+    <div class="form-group">
+        @Html.LabelFor(m => m.personel.Ad)
+        @Html.TextBoxFor(m => m.personel.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.personel.Ad)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.personel.Soyad)
+        @Html.TextBoxFor(m => m.personel.Soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.personel.Soyad)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.personel.DepartmanId)
+        @Html.DropDownListFor(m => m.personel.DepartmanId, new SelectList(Model.Departmanlar, "Id", "DepartmanAd"), "Departman Seçiniz", new
+    { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.personel.DepartmanId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.personel.Maas)
+        @Html.TextBoxFor(m => m.personel.Maas, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.personel.Maas)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.personel.DogumTarihi)
+        @Html.TextBoxFor(m => m.personel.DogumTarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.personel.DogumTarihi)
+    </div>
+    <div class="radio">
+        <label>
+            @Html.RadioButtonFor(m => m.personel.Cinsiyet, true) Erkek
+        </label>
+        <label>
+            @Html.RadioButtonFor(m => m.personel.Cinsiyet, false) Kadın
+        </label>
+        @Html.ValidationMessageFor(m => m.personel.Cinsiyet)
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.personel.EvliMi) Evliyseniz seçiniz
+        </label>
+    </div>
+    @Html.HiddenFor(m => m.personel.Id)
+    <button type="submit" class="btn btn-default">Kaydet</button>
+}
+@section scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
 

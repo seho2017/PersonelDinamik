@@ -22,12 +22,22 @@ namespace PersonelDinamik.Controllers
         {
             var model = new PersonelFormViewModel()
             {
-                Departmanlar = db.Departman.ToList()
+                Departmanlar = db.Departman.ToList(),
+                 personel = new Personel()
             };
             return View("PersonelForm",model);
         }
         public ActionResult Kaydet(Personel personel)
         {
+            if (!ModelState.IsValid) {
+                var model = new PersonelFormViewModel()
+
+                {
+                    Departmanlar=db.Departman.ToList(),
+                   personel = personel
+                };
+                return View("PersonelForm",model);
+            }
             if(personel.Id==0)//ekleme işlemi
             {
                 db.Personel.Add(personel);

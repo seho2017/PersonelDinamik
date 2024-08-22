@@ -11,16 +11,28 @@ namespace PersonelDinamik.Models.EntitiyFrameWork
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Personel
     {
         public int Id { get; set; }
+        [Display(Name ="Departman Adý")]
+        [Required(ErrorMessage ="Lütfen Departman Seçiniz")]
         public Nullable<int> DepartmanId { get; set; }
+        [Required(ErrorMessage = "Adýnýzý Girin")]
         public string Ad { get; set; }
+        [Required(ErrorMessage = "Soyadýnýzý Girin")]
         public string Soyad { get; set; }
+        [Display(Name = "Maaþ")]
+        [Required(ErrorMessage ="Maaþ alaný zorunlu")]
+        [Range(1399,8000,ErrorMessage ="4000 ile 8000 arasýnda yazýn")]
         public Nullable<short> Maas { get; set; }
+        [Display(Name = "Doðum Tarihi")]
+        [Required(ErrorMessage = "Doðum Tarihinizi Girin")]
         public Nullable<System.DateTime> DogumTarihi { get; set; }
+        [Required(ErrorMessage = "Cinsiyet Seçiniz")]
         public bool Cinsiyet { get; set; }
+        [Display(Name = "Evlilik Durumu")]
         public bool EvliMi { get; set; }
     
         public virtual Departman Departman { get; set; }
