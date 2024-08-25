@@ -7,7 +7,7 @@
 <h2>Personel Formu</h2>
 @Html.ValidationSummary()
 @using (Html.BeginForm("Kaydet", "Personel", FormMethod.Post))
-{
+{@Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.personel.Ad)
         @Html.TextBoxFor(m => m.personel.Ad, new { @class = "form-control" })
@@ -31,7 +31,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.personel.DogumTarihi)
-        @Html.TextBoxFor(m => m.personel.DogumTarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.TextBoxFor(m => m.personel.DogumTarihi, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date",onchange= "CheckDateTypeIsValid(this)" })
         @Html.ValidationMessageFor(m => m.personel.DogumTarihi)
     </div>
     <div class="radio">

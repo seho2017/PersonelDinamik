@@ -22,7 +22,8 @@ namespace PersonelDinamik.Controllers
             
             return View("DepartmanForm",new Departman());
         }
-      [HttpPost]
+        //CRSF
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Departman departman)
         {
             if (!ModelState.IsValid)
