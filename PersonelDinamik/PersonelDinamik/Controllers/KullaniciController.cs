@@ -10,6 +10,7 @@ using PersonelDinamik.Models.EntitiyFrameWork;
 
 namespace PersonelDinamik.Controllers
 {
+    [Authorize(Roles = "AB")]
     public class KullaniciController : Controller
     {
         private PersonelDbEntities db = new PersonelDbEntities();

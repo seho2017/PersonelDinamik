@@ -9,15 +9,18 @@ using PersonelDinamik.ViewModels;
 
 namespace PersonelDinamik.Controllers
 {
+    [Authorize(Roles = "AB,A")]
     public class PersonelController : Controller
     {
         PersonelDbEntities db=new PersonelDbEntities();
         // GET: Personel
+        
         public ActionResult Index()
         {
             var model=db.Personel.Include(x=>x.Departman).ToList();
             return View(model);
         }
+        
         public ActionResult yeni() 
         {
             var model = new PersonelFormViewModel()
