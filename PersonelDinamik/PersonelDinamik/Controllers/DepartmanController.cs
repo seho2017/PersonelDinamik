@@ -1,4 +1,5 @@
 ﻿using PersonelDinamik.Models.EntitiyFrameWork;
+using PersonelDinamik.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +32,11 @@ namespace PersonelDinamik.Controllers
             {
                 return View("DepartmanForm");
             }
+            MesajViewModel model = new MesajViewModel();
             if (departman.Id == 0)
             {
                 db.Departman.Add(departman);
+                model.Mesaj = departman.DepartmanAd + "başarıyla eklendi...";
             }
             else
             {
@@ -43,9 +46,14 @@ namespace PersonelDinamik.Controllers
                     return HttpNotFound();
                 }
                 guncellenecekDepartman.DepartmanAd = departman.DepartmanAd;
+                model.Mesaj = departman.DepartmanAd + "başarıyla güncellendi...";
             }
            db.SaveChanges();
-           return RedirectToAction("Index","Departman");
+            model.Status=true;
+            model.LinkText = "Departman Listesi";
+            model.Url = "/Departman";
+            /*return RedirectToAction("Index","Departman");*/
+            return View("_Mesaj",model);
         }
         public ActionResult Sil(int id)
         {

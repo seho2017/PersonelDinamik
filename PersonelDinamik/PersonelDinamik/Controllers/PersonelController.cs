@@ -74,5 +74,19 @@ namespace PersonelDinamik.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult PersonelleriListele(int id)
+        {
+            var model=db.Personel.Where(x=>x.DepartmanId==id).ToList();
+            return PartialView(model);
+        }
+       /* public int? ToplamMaas()
+        {
+            return db.Personel.Sum(x=>x.Maas);
+        }*/
+       public ActionResult ToplamMaas()
+        {
+            ViewBag.Maas=db.Personel.Sum(x=>x.Maas);
+            return PartialView();
+        }
     }
 }
