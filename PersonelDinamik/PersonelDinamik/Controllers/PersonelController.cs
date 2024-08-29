@@ -14,7 +14,7 @@ namespace PersonelDinamik.Controllers
     {
         PersonelDbEntities db=new PersonelDbEntities();
         // GET: Personel
-        
+        [OutputCache(Duration =30)]
         public ActionResult Index()
         {
             var model=db.Personel.Include(x=>x.Departman).ToList();

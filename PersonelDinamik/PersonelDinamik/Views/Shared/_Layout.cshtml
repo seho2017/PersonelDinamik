@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Web.Optimization
+
+@{
     Layout = null;
 }
 
@@ -8,24 +10,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>_Layout</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/bundles/css")
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+        <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />*@
 </head>
 <body>
     @Html.Partial("_Navbar")
     <div class="container">
         @RenderBody()
     </div>
-
-    <!-- JavaScript Kütüphaneleri -->
-    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script> <!-- Düzeltildi -->
-    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
-    <script src="~/Scripts/bootbox.min.js"></script>
-    <script src="~/Scripts/custom.js"></script>
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", false)
 </body>
 </html> 
