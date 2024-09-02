@@ -12,10 +12,12 @@ namespace PersonelDinamik.Controllers
     public class DepartmanController : Controller
     {
         PersonelDbEntities db=new PersonelDbEntities();
-       
+        
         public ActionResult Index()
         {
             var model=db.Departman.ToList();
+            int a = 10, b = 0;
+            int c = a / b;
             return View(model);
         }
         [HttpGet]

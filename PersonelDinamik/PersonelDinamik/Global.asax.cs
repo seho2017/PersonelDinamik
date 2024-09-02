@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Optimization;
+using PersonelDinamik.Filters;
 
 
 namespace PersonelDinamik
@@ -19,6 +20,8 @@ namespace PersonelDinamik
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalFilters.Filters.Add(new ElmahExceptionFilter());
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());
         }
     }
 }
